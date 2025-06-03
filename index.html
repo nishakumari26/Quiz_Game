@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="welcome-screen">
+            <h1>🧠 Interactive Quiz Game</h1>
+            <p style="font-size: 1.2em; color: #7f8c8d; margin-bottom: 30px;">
+                Test your knowledge across different categories!
+            </p>
+
+            <div class="category-selection">
+                <h3 style="margin-bottom: 20px; color: #2c3e50;">Choose a Category:</h3>
+                <button class="category-btn" onclick="startQuiz('general')">🌟 General Knowledge</button>
+                <button class="category-btn science" onclick="startQuiz('science')">🔬 Science</button>
+                <button class="category-btn history" onclick="startQuiz('history')">📚 History</button>
+                <button class="category-btn sports" onclick="startQuiz('sports')">⚽ Sports</button>
+            </div>
+
+            <div style="background: rgba(52, 73, 94, 0.1); padding: 20px; border-radius: 15px; margin-top: 30px;">
+                <h4 style="color: #2c3e50; margin-bottom: 10px;">Quiz Rules:</h4>
+                <ul style="text-align: left; color: #7f8c8d; list-style: none; padding: 0;">
+                    <li>✓ 10 questions per quiz</li>
+                    <li>✓ 30 seconds per question</li>
+                    <li>✓ Multiple choice answers</li>
+                    <li>✓ Instant feedback on answers</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="quiz-screen hidden">
+            <div class="quiz-info">
+                <div class="info-item">
+                    <div class="info-label">Question</div>
+                    <div class="info-value"><span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Score</div>
+                    <div class="info-value" id="currentScore">0</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Time</div>
+                    <div class="info-value timer" id="timer">30</div>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question" id="question"></div>
+                <div class="options" id="options"></div>
+            </div>
+
+            <button class="next-btn" id="nextBtn" onclick="nextQuestion()" disabled>Next Question</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen" class="result-screen hidden">
+            <h1>🎉 Quiz Complete!</h1>
+
+            <div class="result-card">
+                <div class="score-circle" id="scoreCircle">
+                    <span id="finalScore">0</span>
+                </div>
+
+                <div class="result-message" id="resultMessage"></div>
+
+                <div class="result-details">
+                    <div class="detail-item">
+                        <div class="detail-value" id="correctAnswers">0</div>
+                        <div class="detail-label">Correct</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-value" id="incorrectAnswers">0</div>
+                        <div class="detail-label">Incorrect</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-value" id="percentage">0%</div>
+                        <div class="detail-label">Accuracy</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-value" id="timeTaken">0s</div>
+                        <div class="detail-label">Time Taken</div>
+                    </div>
+                </div>
+
+                <button class="restart-btn" onclick="restartQuiz()">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
