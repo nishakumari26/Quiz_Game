@@ -104,4 +104,4 @@ Contributions are welcome! Please fork the repository, make changes, and submit 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For questions or feedback, contact [Your Name] at [your.email@example.com] or open an issue on GitHub.
+For questions or feedback, contact Nishu Barnwal at [nishubarnwal300@gmail.com] or open an issue on GitHub.
